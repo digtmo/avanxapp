@@ -1,18 +1,22 @@
 
 import './App.css';
-import Api from './Components/Api';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {GetToken} from './Components/Getoken'
+import {Auth } from './Components/Auth';
+import React, { Fragment } from 'react';
+import { Api } from './Components/Peticion';
 
-function App() {
+function App(props) {
+  const [token, setToken] = React.useState('')
   return (
- 
-    <BrowserRouter>
-    <Routes>
-      <Route path='/Api'element={<Api/>}></Route>
-    </Routes>
-    </BrowserRouter>
- 
-
+    <Fragment>
+      <GetToken
+      token={token}
+      setToken={setToken}
+      />
+      <Auth
+      token={token}/>
+      <Api/>
+    </Fragment>
   );
 }
 
