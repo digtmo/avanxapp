@@ -1,11 +1,9 @@
-
 import './App.css';
 import {GetToken} from './Components/Getoken'
 import {Auth } from './Components/Auth';
 import React, { Fragment } from 'react';
 import { Api } from './Components/Peticion';
-import {TableData} from './Components/Table';
-import {CollapsibleTable}  from './Components/TableUI';
+import BasicExample from './Components/Table'
 /* import {contador} from './Components/Indicadores'; */
 
 const dataApi = [
@@ -29,17 +27,12 @@ function App(props) {
       <Auth
       token={token}/>
       <Api/>
-      <TableData
-      dataApi={dataApi}
-      />
-      <h1>Table UI</h1>
-      <rows
-      dataApi={dataApi}
-      />
-      <CollapsibleTable/>
+      <h1>Table bootstrap</h1>
+      <BasicExample/>
       <contador
       dataApi={enrrollementCourse}
       />
+      <h1>Table UI</h1>
     </Fragment>
 
   );
